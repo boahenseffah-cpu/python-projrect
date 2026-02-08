@@ -13,3 +13,16 @@ for key,value in cart.items():
     print (key,value)
    
         
+book={"dracula":"Bram stoker","The perks of being a wallflower":"Stephen Chbosky","Harry potter":"JK Rowling"}
+print(book)
+
+cart={}
+while True:
+    product=input("wich book do you want to buy")
+    if product == "stop":
+         break
+    quantity=int(input("how many do you want to buy"))
+    cart[product]=quantity
+    print(cart)
+for key,value in cart.items():
+    print (key,value)
