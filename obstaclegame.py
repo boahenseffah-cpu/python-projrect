@@ -2,6 +2,7 @@ import pgzrun
 import random
 gameover=False
 life=3
+score=0
 HEIGHT=522
 WIDTH=696
 mario=Actor("mario")
@@ -18,7 +19,8 @@ def draw():
         screen.blit("gameover",(50,-20))
         return
     screen.blit("mariobackground",(0,0))
-    screen.draw.text("life="+str(life),(10,10))
+    screen.draw.text("life="+str(life),(25,25))
+    screen.draw.text("score="+str(score),(10,10))
     mario.draw()
     for obstacle in obstaclelist:
         obstacle.draw()
@@ -29,12 +31,14 @@ def on_key_down(key):
 def update():
     global life
     global gameover
+    global score
     if mario.y<400:
         mario.y+=2   
     for obstacle in obstaclelist: 
         obstacle.x-=2
         if mario.colliderect(obstacle):
             life-=1
+            score+=1
 
             obstaclelist.remove(obstacle)
 
