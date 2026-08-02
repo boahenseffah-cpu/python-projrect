@@ -15,14 +15,26 @@ class Ball():
         pygame.draw.circle(screen,self.color,(self.xposition,self.yposition),self.radius,self.width)
 
 
-ball1=Ball("blue",45,20,12,0)
+ball1=Ball("blue",110,20,12,0)
 ball1.display()
+ball2=Ball("black",100,60,12,0)
+ball2.display()
+ball3=Ball("pink",30,10,12,0)
+ball3.display()
+ball4=Ball("green",60,80,12,0)
+ball4.display()
+ball5=Ball("red",45,100,12,0)
+ball5.display()
 while True:
     screen.fill("yellow")
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
             pygame.quit()
     ball1.draw()
+    ball2.draw()
+    ball3.draw()
+    ball4.draw()
+    ball5.draw()
     pygame.display.update()
 
 
